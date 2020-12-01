@@ -38,7 +38,7 @@ it('ensures that a draft can be created and published', async () => {
 	expect(publishResult).toStrictEqual({
 		publish: {
 			...draftResult.createDraft,
-			published: true,
+			published: false,
 		},
 	});
 
