@@ -30,16 +30,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn install
-    - run: yarn generate
-    - run: yarn migrate 
     - run: yarn test
-    - run: pwd
-    - run: ls
-    - run: cat ./coverage/Icov-report/index.html
-    - uses: actions/upload-artifact@v2
-      with:
-        name: my-artifact
-        path: ./coverage/Icov-report/index.html
     - run: echo hi > world.txt
     - uses: actions/upload-artifact@v2
       with:
