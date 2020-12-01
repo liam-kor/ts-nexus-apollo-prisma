@@ -13,7 +13,9 @@
     $docker run --detach --publish 5432:5432 -e POSTGRES_PASSWORD=postgres --name postgres postgres:10.12
     ```
 - Set database url(prisma/.env)
-    > DATABASE_URL="postgresql://postgres:postgres@localhost:5432/myapp"
+    ```
+    DATABASE_URL="postgresql://postgres:postgres@localhost:5432/myapp"
+    ```
 - Prisma & Nexus generate
     ```
     $yarn generate
