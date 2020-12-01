@@ -33,3 +33,7 @@ jobs:
     - run: yarn generate
     - run: yarn migrate 
     - run: yarn test
+    - uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: coverage/Icov-report/index.html
