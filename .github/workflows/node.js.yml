@@ -33,11 +33,13 @@ jobs:
     - run: yarn generate
     - run: yarn migrate 
     - run: yarn test
-    - run: cat coverage/Icov-report/index.html
+    - run: pwd
+    - run: ls
+    - run: cat ./coverage/Icov-report/index.html
     - uses: actions/upload-artifact@v2
       with:
         name: my-artifact
-        path: coverage/Icov-report/index.html
+        path: ./coverage/Icov-report/index.html
     - run: echo hi > world.txt
     - uses: actions/upload-artifact@v2
       with:
