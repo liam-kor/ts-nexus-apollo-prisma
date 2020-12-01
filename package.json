@@ -8,7 +8,7 @@
     "build": "tsc",
     "generate": "prisma generate && ts-node-dev --transpile-only api/schema.ts",
     "migrate": "prisma migrate save --experimental && prisma migrate up --experimental",
-    "test": "yarn run generate && jest --detectOpenHandles --forceExit",
+    "test": "yarn run generate && jest --detectOpenHandles",
     "start": "node dist/api/app.js",
     "lint": "eslint ."
   },

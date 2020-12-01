@@ -3,5 +3,6 @@ dist/
 yarn-error.log
 package-lock.json
 
+coverage/
 nexus-typegen.ts
 .idea
