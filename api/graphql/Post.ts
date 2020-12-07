@@ -1,12 +1,8 @@
 import { objectType, extendType, stringArg, intArg, nonNull } from '@nexus/schema';
 
 export const Post = objectType({
-	name: 'Post', // <- Name of your type
+	name: 'Post',
 	definition(t) {
-		// t.int('id')            // <- Field named `id` of type `Int`
-		// t.string('title')      // <- Field named `title` of type `String`
-		// t.string('body')       // <- Field named `body` of type `String`
-		// t.boolean('published') // <- Field named `published` of type `Boolean`
 		t.model.id();
 		t.model.title();
 		t.model.body();
@@ -38,14 +34,13 @@ export const PostMutation = extendType({
 		t.nonNull.field('createDraft', {
 			type: 'Post',
 			args: {
-				// 1
-				title: nonNull(stringArg()), // 2
-				body: nonNull(stringArg()), // 2
+				title: nonNull(stringArg()),
+				body: nonNull(stringArg()),
 			},
 			resolve(_root, args, ctx) {
 				const draft = {
-					title: args.title, // 3
-					body: args.body, // 3
+					title: args.title,
+					body: args.body,
 					published: false,
 				};
 				return ctx.db.post.create({ data: draft });
